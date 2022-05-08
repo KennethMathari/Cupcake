@@ -50,6 +50,7 @@ class SummaryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.apply {
+            viewModel = sharedViewModel
             sendButton.setOnClickListener { sendOrder() }
         }
     }
@@ -58,7 +59,6 @@ class SummaryFragment : Fragment() {
      * Submit the order by sharing out the order details to another app via an implicit intent.
      */
     fun sendOrder() {
-        Toast.makeText(activity, "Send Order", Toast.LENGTH_SHORT).show()
     }
 
     /**
