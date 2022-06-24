@@ -20,7 +20,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -41,7 +40,7 @@ class SummaryFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         val fragmentBinding = FragmentSummaryBinding.inflate(inflater, container, false)
         binding = fragmentBinding
@@ -57,6 +56,7 @@ class SummaryFragment : Fragment() {
             summaryFragment = this@SummaryFragment
         }
     }
+
     fun cancelOrder() {
         sharedViewModel.resetOrder()
         findNavController().navigate(R.id.action_summaryFragment_to_startFragment)
@@ -78,7 +78,7 @@ class SummaryFragment : Fragment() {
             .setType("text/plain")
             .putExtra(Intent.EXTRA_SUBJECT, getString(R.string.new_cupcake_order))
             .putExtra(Intent.EXTRA_TEXT, orderSummary)
-            //.putExtra(Intent.EXTRA_EMAIL,"mathari580@gmail.com")
+        //.putExtra(Intent.EXTRA_EMAIL,"mathari580@gmail.com")
 
         if (activity?.packageManager?.resolveActivity(intent, 0) != null) {
             startActivity(intent)
