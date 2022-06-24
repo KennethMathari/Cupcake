@@ -78,7 +78,7 @@ class SummaryFragment : Fragment() {
             .setType("text/plain")
             .putExtra(Intent.EXTRA_SUBJECT, getString(R.string.new_cupcake_order))
             .putExtra(Intent.EXTRA_TEXT, orderSummary)
-            .putExtra(Intent.EXTRA_EMAIL,"mathari580@gmail.com")
+            //.putExtra(Intent.EXTRA_EMAIL,"mathari580@gmail.com")
 
         if (activity?.packageManager?.resolveActivity(intent, 0) != null) {
             startActivity(intent)
